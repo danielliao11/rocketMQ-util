@@ -70,6 +70,7 @@ public class Publisher {
      *      updateTime	     Long	                更新时间
      *      remark	         String	                备注，可以不填
      * </pre>
+     *
      * @throws ClientException
      */
     public OnsPublishGetResponse.PublishInfoDo show(BaseMsgParam param) throws ClientException {
@@ -115,6 +116,7 @@ public class Publisher {
      *      HelpUrl	         String	                    帮助链接
      *      Data	         List(PublishInfoDo)	    查询结果集合
      * </pre>
+     *
      * @throws ClientException
      */
     public OnsPublishListResponse showAll(BaseMsgParam param) throws ClientException {
@@ -157,6 +159,7 @@ public class Publisher {
      *      RequestId	     String	      为公共参数，每个请求独一无二
      *      HelpUrl	         String	      帮助链接
      * </pre>
+     *
      * @throws ClientException
      */
     public OnsPublishCreateResponse create(BaseMsgParam param) throws ClientException {
@@ -200,6 +203,7 @@ public class Publisher {
      *      RequestId	     String	      为公共参数，每个请求独一无二
      *      HelpUrl	         String	      帮助链接
      * </pre>
+     *
      * @throws ClientException
      */
     public OnsPublishDeleteResponse delete(BaseMsgParam param) throws ClientException {
