@@ -4,7 +4,6 @@ version '0.0.1-SNAPSHOT'
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'maven'
-apply plugin: 'eclipse'
 
 buildscript {
     repositories {
