@@ -1,0 +1,64 @@
+group 'com.saintdan.util'
+version '0.0.1-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+
+buildscript {
+    repositories {
+        maven {
+            url {
+                "https://oss.sonatype.org/content/repositories/snapshots/"
+            }
+        }
+        mavenCentral()
+        jcenter()
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            url {
+                "https://oss.sonatype.org/content/repositories/snapshots/"
+            }
+        }
+        mavenCentral()
+        jcenter()
+    }
+}
+
+compileJava {
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+}
+
+compileTestJava {
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+}
+
+ext {
+    aliyunCoreVersion = '2.3.2'
+    onsClientVersion = '1.1.11'
+    pahoVersion = '1.0.2'
+    commonsLang3Version = '3.4'
+
+    junitVersion = '4.12'
+}
+
+dependencies {
+    compile "com.aliyun:aliyun-java-sdk-core:${aliyunCoreVersion}"
+
+    // 目前阿里还没有将aliyun-java-sdk-ons包部署到软件仓库中，所以是从官网上下载SDK到本地
+    compile files('libs/aliyun-java-sdk-ons-1.0.1-SNAPSHOT.jar')
+    compile "com.aliyun.openservices:ons-client:${onsClientVersion}"
+    compile "org.eclipse.paho:org.eclipse.paho.client.mqttv3:${pahoVersion}"
+    compile "org.apache.commons:commons-lang3:${commonsLang3Version}"
+
+    testCompile "junit:junit:${junitVersion}"
+}
+
+apply from: 'mvn-push.gradle'

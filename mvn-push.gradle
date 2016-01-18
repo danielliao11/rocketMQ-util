@@ -1,0 +1,36 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: System.properties['release']) {
+                authentication(userName: System.properties['username'], password: System.properties['password'])
+            }
+            snapshotRepository(url: System.properties['snapshot']) {
+                authentication(userName: System.properties['username'], password: System.properties['password'])
+            }
+        }
+    }
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from 'build/docs/javadoc'
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+javadoc{
+    failOnError = false
+}
+
+artifacts {
+    archives jar
+    archives javadocJar
+    archives sourcesJar
+}

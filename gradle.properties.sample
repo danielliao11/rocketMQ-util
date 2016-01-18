@@ -1,0 +1,5 @@
+# 私服信息
+systemProp.username = 您的nexus私服用户名
+systemProp.password = 您的nexus私服用户密码
+systemProp.release = 您的nexus私服发布库地址
+systemProp.snapshot = 您的nexus私服快照库地址
