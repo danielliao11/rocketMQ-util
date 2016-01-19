@@ -20,7 +20,7 @@ public class BaseTest {
 
     protected BaseParam getParam() {
         BaseParam param = new BaseParam();
-        param.setRegionId(CommonConstant.REGION_ID);
+        param.setRegionId(TestConstant.REGION_ID);
         param.setAccessKey(TestConstant.ACCESS_KEY);
         param.setSecretKey(TestConstant.SECRET_KEY);
         return param;
@@ -28,7 +28,7 @@ public class BaseTest {
 
     protected BaseMsgParam getBaseMsgParam() {
         BaseMsgParam param = new BaseMsgParam();
-        param.setRegionId(CommonConstant.REGION_ID);
+        param.setRegionId(TestConstant.REGION_ID);
         param.setAccessKey(TestConstant.ACCESS_KEY);
         param.setSecretKey(TestConstant.SECRET_KEY);
         param.setOnsRegionId(HANG_ZHOU);
@@ -37,7 +37,7 @@ public class BaseTest {
 
     protected TopicParam getTopicParam() {
         TopicParam param = new TopicParam();
-        param.setRegionId(CommonConstant.REGION_ID);
+        param.setRegionId(TestConstant.REGION_ID);
         param.setAccessKey(TestConstant.ACCESS_KEY);
         param.setSecretKey(TestConstant.SECRET_KEY);
         param.setOnsRegionId(HANG_ZHOU);
