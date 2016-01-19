@@ -295,6 +295,7 @@ public class Topic {
      *      RequestId	    String	    为公共参数，每个请求独一无二
      *      HelpUrl	        String	    帮助链接
      * </pre>
+     *
      * @throws ClientException
      */
     public OnsTopicDeleteResponse delete(TopicParam param) throws ClientException {

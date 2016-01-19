@@ -49,6 +49,8 @@ public class Message {
      *      HelpUrl	         String	                    帮助链接
      *      Data	         String	                    查询结果集合
      * </pre>
+     *
+     * @throws ClientException
      */
     public OnsMessageSendResponse send(BaseMsgParam param) throws ClientException {
         // 初始化client
@@ -100,6 +102,8 @@ public class Message {
      *      RequestId	     String	                    为公共参数，每个请求独一无二
      *      HelpUrl	         String	                    帮助链接
      * </pre>
+     *
+     * @throws ClientException
      */
     public OnsMessagePushResponse push(BaseMsgParam param) throws ClientException {
         // 初始化client
@@ -155,6 +159,8 @@ public class Message {
      *      TrackType	     String	                    当前状态
      *      ExceptionDesc	 String	                    异常描述
      * </pre>
+     *
+     * @throws ClientException
      */
     public OnsMessageTraceResponse track(BaseMsgParam param) throws ClientException {
         // 初始化client
@@ -222,6 +228,8 @@ public class Message {
      *      ReconsumeTimes	 Integer	                消息重试消费的次数
      *      PreparedTransactionOffset	Long	        如果是事务消息，指的是提交给服务器的事务消息ID
      * </pre>
+     *
+     * @throws ClientException
      */
     public OnsMessageGetByKeyResponse searchByKey(BaseMsgParam param) throws ClientException {
         // 初始化client
@@ -288,6 +296,8 @@ public class Message {
      *      ReconsumeTimes	 Integer	                消息重试消费的次数
      *      PreparedTransactionOffset	Long	        如果是事务消息，指的是提交给服务器的事务消息ID
      * </pre>
+     *
+     * @throws ClientException
      */
     public OnsMessageGetByMsgIdResponse searchByMsgId(BaseMsgParam param) throws ClientException {
         // 初始化client
@@ -353,6 +363,8 @@ public class Message {
      *      ReconsumeTimes	 Integer	                消息重试消费的次数
      *      PreparedTransactionOffset	Long	        如果是事务消息，指的是提交给服务器的事务消息ID
      * </pre>
+     *
+     * @throws ClientException
      */
     public OnsMessageGetByTopicResponse searchByTopic(BaseMsgParam param) throws ClientException {
         // 初始化client
