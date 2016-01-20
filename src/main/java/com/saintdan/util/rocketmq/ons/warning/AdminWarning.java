@@ -7,7 +7,7 @@ import com.aliyuncs.ons.model.v20151214.OnsWarnAdminRequest;
 import com.aliyuncs.ons.model.v20151214.OnsWarnAdminResponse;
 import com.saintdan.util.rocketmq.enums.WarnOperateType;
 import com.saintdan.util.rocketmq.factory.IAcsClientFactory;
-import com.saintdan.util.rocketmq.param.BaseMsgParam;
+import com.saintdan.util.rocketmq.param.AdminWarningParam;
 
 /**
  * 管理员警告操作
@@ -52,7 +52,7 @@ public class AdminWarning {
      *
      * @throws ClientException
      */
-    public OnsWarnAdminResponse operate(BaseMsgParam param, WarnOperateType type) throws ClientException {
+    public OnsWarnAdminResponse operate(AdminWarningParam param) throws ClientException {
         // 初始化client
         IAcsClient client = clientFactory.newIAcsClient(param);
         // 设置参数
@@ -60,10 +60,10 @@ public class AdminWarning {
         request.setAcceptFormat(FormatType.JSON);
         request.setOnsRegionId(param.getOnsRegionId());
         request.setPreventCache(System.currentTimeMillis());
-        request.setUserId(request.getUserId());
-        request.setConsumerId(param.getClientId());
+        request.setUserId(param.getAdminAccount());
+        request.setConsumerId(param.getUserId());
         request.setTopic(param.getTopic());
-        request.setType(type.description());
+        request.setType(param.getType().description());
         return client.getAcsResponse(request);
     }
 

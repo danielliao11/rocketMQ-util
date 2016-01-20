@@ -2,6 +2,7 @@ package com.saintdan.util.rocketmq.ons;
 
 import com.saintdan.util.rocketmq.TestConstant;
 import com.saintdan.util.rocketmq.constant.CommonConstant;
+import com.saintdan.util.rocketmq.param.AdminWarningParam;
 import com.saintdan.util.rocketmq.param.BaseMsgParam;
 import com.saintdan.util.rocketmq.param.BaseParam;
 import com.saintdan.util.rocketmq.param.TopicParam;
