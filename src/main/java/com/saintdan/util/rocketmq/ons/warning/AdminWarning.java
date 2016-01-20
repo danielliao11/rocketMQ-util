@@ -34,7 +34,7 @@ public class AdminWarning {
      *      OnsRegionId	     String	      是	            当前查询ONS所在区域，可以通过ONSRegionList方法获取
      *      OnsPlatform	     String	      否	            该请求来源，默认是从POP平台
      *      PreventCache	 Long	      是	            用于CSRF校验，设置为系统当前时间即可
-     *      UserId	         String	      是	            管理员户账号
+     *      UserId	         String	      是	            管理员用户账号
      *      ConsumerId	     String	      是	            消费集群CID
      *      Topic	         String	      是	            消费的Topic名称
      *      Type	         String	      是	            操作类型 {@link WarnOperateType}

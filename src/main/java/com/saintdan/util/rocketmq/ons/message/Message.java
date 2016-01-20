@@ -87,7 +87,7 @@ public class Message {
      *      OnsRegionId	     String	      是	            当前查询ONS所在区域，可以通过OnsRegionList方法获取
      *      OnsPlatform	     String	      否	            该请求来源，默认是从POP平台
      *      PreventCache	 Long	      是	            用于CSRF校验，设置为系统当前时间即可
-     *      ConsumerId	     String	      是	            消息发送集群的PID
+     *      ConsumerId	     String	      是	            消息发送集群的CID
      *      ClientId	     String	      是	            消费端实例的ID，类似于IP@端口号
      *      MsgId	         String	      是	            指定消息的MsgID编号
      *      Topic	         String	      是	            消息的Topic

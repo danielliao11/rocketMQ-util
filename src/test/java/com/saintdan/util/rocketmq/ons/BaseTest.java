@@ -44,6 +44,10 @@ public class BaseTest {
         return param;
     }
 
+    protected static final String SAINTDAN_TEST = "saintdan_test";
+    protected static final String SAINTDAN_TEST1 = "saintdan_test1";
+    protected static final String SAINTDAN_TEST2 = "saintdan_test2";
+
     private static final String HANG_ZHOU = "hangzhou";
 
 }
