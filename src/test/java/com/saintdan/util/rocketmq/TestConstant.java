@@ -9,10 +9,12 @@ package com.saintdan.util.rocketmq;
  */
 public interface TestConstant {
 
-    String ACCESS_KEY = "您的通行key";
+    String ACCESS_KEY = "你的访问key";
 
-    String SECRET_KEY = "您的密钥";
+    String SECRET_KEY = "你的密钥";
 
-    String REGION_ID = "cn-hangzhou";
+    String REGION_ID = "xxxx";
+
+    String ADMIN_ACCOUNT = "xxxx";
 
 }
