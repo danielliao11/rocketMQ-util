@@ -189,6 +189,98 @@ public class Warning {
     }
 
     /**
+     * 使能报警信息
+     *
+     * <p>
+     *     针对某一个消费集群，使能对应的报警信息
+     * </p>
+     *
+     * @param param     请求参数
+     * <p>
+     *     {@link OnsWarnEnableRequest}
+     * </p>
+     * <pre>
+     *      名称	             类型	      是否必须	    描述
+     *      OnsRegionId	     String	      是	            当前查询ONS所在区域，可以通过ONSRegionList方法获取
+     *      OnsPlatform	     String	      否	            该请求来源，默认是从POP平台
+     *      PreventCache	 Long	      是	            用于CSRF校验，设置为系统当前时间即可
+     *      UserId	         String	      是	            管理员用户账号
+     *      ConsumerId	     String	      是	            消费集群CID
+     *      Topic	         String	      是	            消费的Topic名称
+     * </pre>
+     *
+     * @return          返回参数
+     * <p>
+     *     {@link OnsWarnEnableResponse}
+     * </p>
+     * <pre>
+     *      名称	             类型	                    描述
+     *      RequestId	     String	                    为公共参数，每个请求独一无二
+     *      HelpUrl	         String	                    帮助链接
+     * </pre>
+     *
+     * @throws ClientException
+     */
+    public OnsWarnEnableResponse enable(WarningParam param) throws ClientException {
+        // 初始化client
+        IAcsClient client = clientFactory.newIAcsClient(param);
+        // 设置参数
+        OnsWarnEnableRequest request = new OnsWarnEnableRequest();
+        request.setAcceptFormat(FormatType.JSON);
+        request.setOnsRegionId(param.getOnsRegionId());
+        request.setPreventCache(System.currentTimeMillis());
+        request.setConsumerId(param.getUserId());
+        request.setTopic(param.getTopic());
+        return client.getAcsResponse(request);
+    }
+
+    /**
+     * 关闭报警信息
+     *
+     * <p>
+     *     针对某一个消费集群，关闭对应的报警信息
+     * </p>
+     *
+     * @param param     请求参数
+     * <p>
+     *     {@link OnsWarnDisableRequest}
+     * </p>
+     * <pre>
+     *      名称	             类型	      是否必须	    描述
+     *      OnsRegionId	     String	      是	            当前查询ONS所在区域，可以通过ONSRegionList方法获取
+     *      OnsPlatform	     String	      否	            该请求来源，默认是从POP平台
+     *      PreventCache	 Long	      是	            用于CSRF校验，设置为系统当前时间即可
+     *      UserId	         String	      是	            管理员用户账号
+     *      ConsumerId	     String	      是	            消费集群CID
+     *      Topic	         String	      是	            消费的Topic名称
+     * </pre>
+     *
+     * @return          返回参数
+     * <p>
+     *     {@link OnsWarnDisableResponse}
+     * </p>
+     * <pre>
+     *      名称	             类型	                    描述
+     *      RequestId	     String	                    为公共参数，每个请求独一无二
+     *      HelpUrl	         String	                    帮助链接
+     * </pre>
+     *
+     * @throws ClientException
+     */
+    public OnsWarnDisableResponse disable(WarningParam param) throws ClientException {
+        // 初始化client
+        IAcsClient client = clientFactory.newIAcsClient(param);
+        // 设置参数
+        OnsWarnDisableRequest request = new OnsWarnDisableRequest();
+        request.setAcceptFormat(FormatType.JSON);
+        request.setOnsRegionId(param.getOnsRegionId());
+        request.setPreventCache(System.currentTimeMillis());
+        request.setConsumerId(param.getUserId());
+        request.setTopic(param.getTopic());
+        return client.getAcsResponse(request);
+    }
+
+    /**
      * 删除报警信息
      *
      * <p>

@@ -1,7 +1,7 @@
 # rocketMQ-util
 
 基于阿里[RocketMQ](https://github.com/alibaba/RocketMQ)搭建.
-本项目为示例项目与工具包项目的结合.
+本项目为示例项目与工具包项目的结合,更方便RocketMQ的用户快速上手.
 由于官方文档中的示例方法存在问题(比如必填参数没有注明),故重新进行整合优化.:P
 
 ### 使用方法

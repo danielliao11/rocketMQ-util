@@ -1,5 +1,5 @@
 group 'com.saintdan.util'
-version '0.0.1-SNAPSHOT'
+version '0.0.5-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'idea'
