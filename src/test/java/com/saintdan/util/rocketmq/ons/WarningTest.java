@@ -1,6 +1,7 @@
 package com.saintdan.util.rocketmq.ons;
 
 import com.alibaba.fastjson.JSON;
+import com.saintdan.util.rocketmq.TestConstant;
 import com.saintdan.util.rocketmq.constant.CommonConstant;
 import com.saintdan.util.rocketmq.ons.warning.AdminWarning;
 import com.saintdan.util.rocketmq.ons.warning.Warning;
@@ -23,7 +24,7 @@ public class WarningTest extends BaseTest {
     @Test
     public void testAdminWarning() throws Exception {
         AdminWarningParam param = (AdminWarningParam) getBaseMsgParam();
-        param.setUserId(CommonConstant.CONSUMER + SAINTDAN_TEST1);
+        param.setUserId(TestConstant.ADMIN_ACCOUNT);
         param.setTopic(SAINTDAN_TEST1);
         System.out.println(JSON.toJSONString(adminWarning.operate(param)));
     }
