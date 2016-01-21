@@ -1,11 +1,7 @@
 package com.saintdan.util.rocketmq.ons;
 
 import com.saintdan.util.rocketmq.TestConstant;
-import com.saintdan.util.rocketmq.constant.CommonConstant;
-import com.saintdan.util.rocketmq.param.AdminWarningParam;
-import com.saintdan.util.rocketmq.param.BaseMsgParam;
-import com.saintdan.util.rocketmq.param.BaseParam;
-import com.saintdan.util.rocketmq.param.TopicParam;
+import com.saintdan.util.rocketmq.param.*;
 
 /**
  * 测试基类
@@ -38,6 +34,24 @@ public class BaseTest {
 
     protected TopicParam getTopicParam() {
         TopicParam param = new TopicParam();
+        param.setRegionId(TestConstant.REGION_ID);
+        param.setAccessKey(TestConstant.ACCESS_KEY);
+        param.setSecretKey(TestConstant.SECRET_KEY);
+        param.setOnsRegionId(HANG_ZHOU);
+        return param;
+    }
+
+    protected WarningParam getWarningParam() {
+        WarningParam param = new WarningParam();
+        param.setRegionId(TestConstant.REGION_ID);
+        param.setAccessKey(TestConstant.ACCESS_KEY);
+        param.setSecretKey(TestConstant.SECRET_KEY);
+        param.setOnsRegionId(HANG_ZHOU);
+        return param;
+    }
+
+    protected AdminWarningParam getAdminWarningParam() {
+        AdminWarningParam param = new AdminWarningParam();
         param.setRegionId(TestConstant.REGION_ID);
         param.setAccessKey(TestConstant.ACCESS_KEY);
         param.setSecretKey(TestConstant.SECRET_KEY);
