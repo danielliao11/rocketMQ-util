@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.aliyuncs.ons.model.v20151214.OnsMessagePushResponse;
 import com.aliyuncs.ons.model.v20151214.OnsMessageSendRequest;
 import com.aliyuncs.ons.model.v20151214.OnsMessageSendResponse;
+import com.saintdan.util.rocketmq.constant.CommonConstant;
 import com.saintdan.util.rocketmq.ons.message.Message;
 import com.saintdan.util.rocketmq.param.BaseMsgParam;
 import org.junit.Test;
@@ -30,8 +31,8 @@ public class MessageTest extends BaseTest {
     @Test
     public void testSend() throws Exception {
         BaseMsgParam param = getBaseMsgParam();
-        param.setTopic("你的topic");
-        param.setUserId("你的发布者id");
+        param.setTopic(SAINTDAN_TEST1);
+        param.setUserId(CommonConstant.PRODUCER + SAINTDAN_TEST1);
         param.setMessage("test");
         param.setTag("test");
         OnsMessageSendResponse response = message.send(param);
@@ -50,10 +51,10 @@ public class MessageTest extends BaseTest {
     @Test
     public void testPush() throws Exception {
         BaseMsgParam param = getBaseMsgParam();
-        param.setUserId("您的消费者ID");
+        param.setUserId(CommonConstant.CONSUMER + SAINTDAN_TEST1);
         param.setClientId("目标客户端地址,比如:10.146.137.139@65531");
         param.setMsgId(UUID.randomUUID().toString());
-        param.setTopic("你的topic");
+        param.setTopic(SAINTDAN_TEST1);
         OnsMessagePushResponse response = message.push(param);
         System.out.println(JSON.toJSONString(response));
     }

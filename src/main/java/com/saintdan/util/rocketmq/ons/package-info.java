@@ -1,5 +1,5 @@
 /**
- * 阿里ons api
+ * 阿里RocketMQ 消息中间件ONS服务 API
  *
  * @author <a href="http://github.com/saintdan">Liao Yifan</a>
  * @date 11/27/15

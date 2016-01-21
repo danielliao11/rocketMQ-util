@@ -1,10 +1,7 @@
 package com.saintdan.util.rocketmq.ons;
 
 import com.saintdan.util.rocketmq.TestConstant;
-import com.saintdan.util.rocketmq.constant.CommonConstant;
-import com.saintdan.util.rocketmq.param.BaseMsgParam;
-import com.saintdan.util.rocketmq.param.BaseParam;
-import com.saintdan.util.rocketmq.param.TopicParam;
+import com.saintdan.util.rocketmq.param.*;
 
 /**
  * 测试基类
@@ -20,7 +17,7 @@ public class BaseTest {
 
     protected BaseParam getParam() {
         BaseParam param = new BaseParam();
-        param.setRegionId(CommonConstant.REGION_ID);
+        param.setRegionId(TestConstant.REGION_ID);
         param.setAccessKey(TestConstant.ACCESS_KEY);
         param.setSecretKey(TestConstant.SECRET_KEY);
         return param;
@@ -28,7 +25,7 @@ public class BaseTest {
 
     protected BaseMsgParam getBaseMsgParam() {
         BaseMsgParam param = new BaseMsgParam();
-        param.setRegionId(CommonConstant.REGION_ID);
+        param.setRegionId(TestConstant.REGION_ID);
         param.setAccessKey(TestConstant.ACCESS_KEY);
         param.setSecretKey(TestConstant.SECRET_KEY);
         param.setOnsRegionId(HANG_ZHOU);
@@ -37,12 +34,34 @@ public class BaseTest {
 
     protected TopicParam getTopicParam() {
         TopicParam param = new TopicParam();
-        param.setRegionId(CommonConstant.REGION_ID);
+        param.setRegionId(TestConstant.REGION_ID);
         param.setAccessKey(TestConstant.ACCESS_KEY);
         param.setSecretKey(TestConstant.SECRET_KEY);
         param.setOnsRegionId(HANG_ZHOU);
         return param;
     }
+
+    protected WarningParam getWarningParam() {
+        WarningParam param = new WarningParam();
+        param.setRegionId(TestConstant.REGION_ID);
+        param.setAccessKey(TestConstant.ACCESS_KEY);
+        param.setSecretKey(TestConstant.SECRET_KEY);
+        param.setOnsRegionId(HANG_ZHOU);
+        return param;
+    }
+
+    protected AdminWarningParam getAdminWarningParam() {
+        AdminWarningParam param = new AdminWarningParam();
+        param.setRegionId(TestConstant.REGION_ID);
+        param.setAccessKey(TestConstant.ACCESS_KEY);
+        param.setSecretKey(TestConstant.SECRET_KEY);
+        param.setOnsRegionId(HANG_ZHOU);
+        return param;
+    }
+
+    protected static final String SAINTDAN_TEST = "saintdan_test";
+    protected static final String SAINTDAN_TEST1 = "saintdan_test1";
+    protected static final String SAINTDAN_TEST2 = "saintdan_test2";
 
     private static final String HANG_ZHOU = "hangzhou";
 

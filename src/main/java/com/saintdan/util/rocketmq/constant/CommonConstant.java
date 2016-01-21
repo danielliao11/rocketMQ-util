@@ -9,8 +9,6 @@ package com.saintdan.util.rocketmq.constant;
  */
 public interface CommonConstant {
 
-    String REGION_ID = "cn-hangzhou";
-
     String PRODUCER = "PID_";
 
     String CONSUMER = "CID_";

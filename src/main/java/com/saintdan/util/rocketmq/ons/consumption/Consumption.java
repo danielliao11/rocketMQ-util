@@ -86,6 +86,8 @@ public class Consumption {
      *      ConsumerOffset	 Long	                    该队列consumer端的最大Offset
      *      LastTimestamp	 String	                    最后更新时刻
      * </pre>
+     *
+     * @throws ClientException
      */
     public OnsConsumerAccumulateResponse accumulate(BaseMsgParam param) throws ClientException {
         // 初始化client

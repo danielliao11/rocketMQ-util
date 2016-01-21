@@ -9,6 +9,8 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
+import java.util.Date;
+
 /**
  * MQTT消息制造
  *
@@ -37,15 +39,13 @@ public class MqttMsg {
         // 连接消息服务
         client.connect(options);
         // 设置连接初始时间
-//        Long start = System.currentTimeMillis();
-//        String msg = JSON.toJSONString(
-//                MessageFactory.generateMessage(param.getTopic(), param.getTag(), param.getKey(), param.getMessage()));
+        Long start = System.currentTimeMillis();
         final MqttMessage message = new MqttMessage( param.getMessage().getBytes("UTF-8"));
         message.setQos(CommonConstant.DEFAULT_QOS);
-        //System.out.println("Message pushed at " + new Date().toString() + ", content is: " + msg);
-        //System.out.println("Message body is: " + new String(param.getMessage().getBytes()));
+        System.out.println("Message pushed at " + new Date().toString() + ", content is: " + message.getPayload().toString());
+        System.out.println("Message body is: " + new String(param.getMessage().getBytes()));
         client.publish(param.getTopic(), message);
-//        System.out.println("Use " + (System.currentTimeMillis() - start) + " ms");
+        System.out.println("Use " + (System.currentTimeMillis() - start) + " ms");
         // 设置callback
         client.setCallback(new CustomMqttCallback());
     }
